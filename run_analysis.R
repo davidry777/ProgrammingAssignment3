@@ -6,7 +6,8 @@ Merged_Data <- cbind(Subject, Y, X)
 
 # Step 2: Extracting measurements on the mean and standard deviation for each 
 # measurement.
-TidyData <- Merged_Data %>% select(subject, code, contains("mean"), contains("std"))
+TidyData <- Merged_Data %>% 
+  select(subject, code, contains("mean"), contains("std"))
 
 # Step 3: Uses descriptive activity names to name the activities.
 TidyData$code <- activities[TidyData$code, 2]
@@ -26,7 +27,7 @@ names(TidyData)<-gsub("-freq()", "Frequency", names(TidyData), ignore.case = TRU
 names(TidyData)<-gsub("angle", "Angle", names(TidyData))
 names(TidyData)<-gsub("gravity", "Gravity", names(TidyData))
 
-# Step 5: Createe a second tidy data set with the average of each variable for 
+# Step 5: Create a second tidy data set with the average of each variable for 
 # each activity and each subject.
 FinalData <- TidyData %>%
   group_by(subject, activity) %>%
