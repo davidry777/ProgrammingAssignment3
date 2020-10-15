@@ -25,3 +25,16 @@ to this specific repo.
   
 ### 3. Uses descriptive activity names to name the activities in the data set
   * All numbers in ```code``` column of the ```tidyData``` are replaced with corresponding activity from the second column of the ```activities``` variable.
+  
+### 4. Appropriately labels the data set with descriptive variable names
+  * ```code``` column in ```tidyData``` renamed into ```activities```
+  * All ```Acc``` in column’s name replaced by ```Accelerometer```
+  * All ```Gyro``` in column’s name replaced by ```Gyroscope```
+  * All ```BodyBody``` in column’s name replaced by ```Body```
+  * All ```Mag``` in column’s name replaced by ```Magnitude```
+  * All start with character ```f``` in column’s name replaced by ```Frequency```
+  * All start with character ```t``` in column’s name replaced by ```Time```
+  
+### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+  * ```finalData``` is created by summarizing ```tidyData``` taking the means of each variable for each activity and each subject, after grouped by subject and activity.
+  * Export ```finalData``` into ```FinalData.txt``` file.
